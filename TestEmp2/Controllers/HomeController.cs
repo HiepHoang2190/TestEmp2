@@ -24,6 +24,15 @@ namespace TestEmp2.Controllers
             this.webHostEnvironment = webHostEnvironment;
         }
 
+       /// <summary>
+       /// sdsdsds
+       /// sdsds
+       /// sd
+       /// sd
+       /// </summary>
+       /// <returns></returns>
+       
+      
         public IActionResult Index()
         {
             var employee = employeeRepository.Gets();
