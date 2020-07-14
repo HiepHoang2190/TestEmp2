@@ -1,0 +1,28 @@
+﻿@model TestEmp2.ViewModels.HomeDetailViewModel
+@{
+    var avartarPath = $"/images/{Model.employee.AvatarPatch ?? "img_avatar1.png"}";
+}
+
+<div class="row justify-content-center">
+
+    <div class="col-12 col-sm-4 ">
+        <div class="card my-4">
+            <div class="card-header">
+                <h3>Name: @Model.employee.Name</h3>
+            </div>
+            <img src="@avartarPath" asp-append-version="true" class="img-fluid card-img-top" />
+
+            <div class="card-body text-center">
+                <h3>Id:@Model.employee.EmployeeId</h3>
+                <h3>Email:@Model.employee.Email</h3>
+                <h3>Department:@Model.employee.Department</h3>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-warning btn1 my-1">Back</a>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.employee.EmployeeId" class="btn btn-primary btn1 my-1">Edit</a>
+                <a asp-controller="Home" asp-action="Delete" asp-route-id="@Model.employee.EmployeeId" class=" btn btn-danger btn1 my-1">Delete</a>
+            </div>
+        </div>
+    </div>
+
+</div>

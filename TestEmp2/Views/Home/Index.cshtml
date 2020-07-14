@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewBag.Title = "List Employee";
+}
+
+<div class="row">
+    @foreach (var emp in Model)
+    {
+        var avartarPath = $"/images/{emp.AvatarPatch ?? "img_avatar1.png"}";
+        <div class="col-6 col-md-3 my-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Name: @emp.Name</h3>
+                </div>
+                <img src="@avartarPath" asp-append-version="true" class="card-img-top" />
+
+                <div class="card-footer">
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@emp.EmployeeId" class="btn btn-info btn1 my-1">View</a>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@emp.EmployeeId" class="btn btn-primary btn1 my-1">Edit</a>
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@emp.EmployeeId" class=" btn btn-danger btn1 my-1">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
